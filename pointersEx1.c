@@ -1,3 +1,9 @@
+/*
+Define a function which takes as input a pointer to a character (p1) and a pointer to an
+integer (p2). If p1 is pointing to ‘s’, it squares the value p2 is pointing to, if p1 is pointing to
+‘+’, it adds +1 to the value at p2, otherwise it changes the character at p1 to ‘e’.
+*/
+
 #include<stdio.h>
 
 void dataManipulation(char* p1, int* p2){
