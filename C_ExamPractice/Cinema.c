@@ -59,7 +59,7 @@ void seatPrint(char* ptrArray[]) {
 }//end print
 
 void reservedSeat(char* ptrArray[], int* ptrSeat){
-*ptrArray[(*ptrSeat)+1]='_';
+*ptrArray[(*ptrSeat)-1]='_';
 printf("Seat reservation is succesfull");
 
 }//end reservation

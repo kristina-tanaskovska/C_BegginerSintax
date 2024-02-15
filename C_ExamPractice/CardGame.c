@@ -12,6 +12,7 @@ char sName[30], sAttribute, sType;
 //prototyping functions
 void Search(int* pInput, int* pCards);
 void Display(int* pInput, int* pCards);
+void Change(int* pInput, int* pCards);
 
 int main(){
 //initializing variables
@@ -27,7 +28,8 @@ for (int i = 0; i < 100; ++i)
    //cards[i].sName[0] = 'Name '+i
    //cards[i].sType = 'Name';
    
-pCards[i] = cards[i].dATK; //assigning a pointer to each element of the array
+   pCards[i] = cards[i].dATK; //assigning a pointer to each element of the array
+ 
 }//end for
 
 printf("\n Enter the attack damage you want filtered: "); //gives user instructions
@@ -42,6 +44,7 @@ else{
 printf("\n Wrong input, positive numbers only"); //gives further input instructuions
 }//end else
 
+   Change(pInput, pCards); //calling Change function
    Display(pInput, pCards); //calling Display function
 
  return 0;
@@ -70,3 +73,17 @@ printf("%d, ", pCards[i]); //prints by value with the dot
 }//end for
 
 }//end display function
+
+void Change(int* pInput, int* pCards){
+//initializing counter
+int dCounter= 0;
+for (int i = 0; i<100; i++){ //i assume that there are 100 yugio cards to be searched in the database
+if(*pInput <= pCards[i] ){ //checs for higher atack then the inputed attack
+   //printf("\n %d", pCards[i]); // prints out how many found
+   //dCounter++; //incriment found matches
+   pCards[i] = i*2;
+}//end if
+}//end for
+//printf("\nYour search yealded: %d results", dCounter); // prints out how many found
+//printf("\n");
+}// end change function
